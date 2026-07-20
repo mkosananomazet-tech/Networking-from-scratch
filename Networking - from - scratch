@@ -1,0 +1,29 @@
+# Networking-from-scratch
+From 42% to SOC - my home lab 
+
+My home star: Mifi Router 192.168.8.1, Samsung .2, Honor .3, iPhone .4, TV .5
+
+## What i learned Week 1
+** A network is when 2 or more devices are connected to one another**
+
+** PDU:** Packets = envelop with IP 192.168.8.x. That's what moves between my Samsung and Honor.
+
+**OSI -Correct order:**
+7. Application - Website, Email, SMS
+6. Presentation - TLS
+5. Session
+4. Transport - TCP/UDP, End to End
+3. Network - IP, Router, Packets
+2. Data Link - Switch, LLC SNAP,Mac
+1 Physical - Wireless, Hub, Power source
+
+## Security Insight 1: Unswitched Ethernet
+On unswitched Ethernet (hub), every packet is received by every host. NIC decides if its for that host.
+You can configure card to forward all packets (promiscuous mode).
+Threat: Password sniffing.
+My fix: WRT300N is switched, not hub. Mitigation: WPA2 + dont share WiFi.
+
+## Incident Log: Human error > Tech
+Intended: 192.168.8.0/24 (256 hosts)
+Typed: /10 (4, 194, 304 hosts)
+Lesson: Check target 3x, press enter once. use Host-only for Kali
