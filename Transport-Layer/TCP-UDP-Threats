@@ -1,0 +1,15 @@
+TCP = Reliable, connection Based, 3-way handshake SYN ->SYN-ACK -ACK
+      Real Example - YouTube
+      When i click YouTube on Samsung .2:
+      1. Samsung .2 -> YouTube server: SYN - "Can we talk?"
+      2. YouTube -> Samsung .2: SYN-ACK - "Yes i can, can you?"
+      3. Samsung .2 -> YouTube: ACK - "yes, let's go"
+      Now video can flow. That is why TCP is reliable - it checks before sending. If one packet of the video is lost TCP retransmits - no missing piece in the video.
+= Retransmission, flow control
+= Threats: SYN flood attack ( SYN flooding) -> DDOS, Stealth scan.
+
+UDP - No quarantee, speed, send and go, connectionless, No handshake
+    -Uses DHCP, SNMP, TFTP, HTTP3 / QUIC
+     p/s YouTube now also uses HTTP3/ QUIC over UDP - same reliable but does handshake in step 1, not 3. Faster That is why you see HTTP 3 (QUIC) in my notes
+= Threat: Reflection and amplification Attack - because there is no handshake
+
